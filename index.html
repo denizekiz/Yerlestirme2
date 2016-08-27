@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Vira Yelken Eğitim Profil</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <link rel="stylesheet" href="style.css">
+              <link rel="stylesheet" href="node_modules/angular-drag-and-drop-lists/framework/vendor/prism.css">
+               <link rel="stylesheet" href="node_modules/angular-drag-and-drop-lists/framework/vendor/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="node_modules/angular-drag-and-drop-lists/framework/demo-framework.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap.min.js"></script>
+    
+     <link rel="stylesheet" type="text/css" href="node_modules/angular-drag-and-drop-lists/demo/advanced/advanced.css" />
+     <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.1.js"></script>
+     <script src="node_modules/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
+
+        <script src="app.js"></script>
+    </head>
+
+    <body ng-app="app">
+
+ <div class="advancedDemo row" ng-controller="AdvancedDemoController">
+
+
+    <div ng-repeat="containers in model" class="col-md-2">
+        <div  ng-include="'./takvim.html'" ></div>
+        <div class="dropzone box box-yellow" ng-include="'node_modules/angular-drag-and-drop-lists/demo/advanced/advanced.html'"></div>
+    </div>
+    <div class="col-md-12"> 
+    <h2>Generated Model</h2>
+<pre>{{modelAsJson}}</pre>
+</div>
+</div>
+
+
+    {{1 + 1}}
+    </body>
+    </html>
