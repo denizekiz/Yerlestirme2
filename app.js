@@ -33,14 +33,16 @@ angular.module("app").controller("AdvancedDemoController", function($scope) {
 
     // Initialize model
     var id = 1;
-    for (var i = 1; i < 4; ++i) {
+    for (var i = 1; i < 7; ++i) {
         $scope.model[i-1] = {name:"Saat "+i,ekipler:[] };
     }
 
     $scope.model.forEach(function(model)
         {
+          
             for(var i=1; i<2;i++){
-            model.ekipler[i-1] = {tekne:"delphia",ogrenciler:[],limit:5,durum:"tamamlanmadı",seviye:"1 Yıldız"};
+              id++;
+            model.ekipler[i-1] = {tekne:"delphia",ogrenciler:[],limit:5,durum:"tamamlanmadı",seviye:"1 Yıldız",Bsaat:12+id,esaat:2};
             }
             
                         model.ekipler.forEach(function(ekip){
