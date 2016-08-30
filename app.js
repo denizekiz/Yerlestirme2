@@ -30,6 +30,14 @@ angular.module("app").controller("AdvancedDemoController", function($scope) {
     };
 
     $scope.model = [];
+    $scope.ogrenciler = [];
+    var id = 100;
+
+    for (var i = 1;i<20;i++)
+    {
+        $scope.ogrenciler[i-1]=  {label:"Ogrenci "+id++,yoklama:"yerleştirilmedi"};
+    }
+
 
     // Initialize model
     var id = 1;
@@ -59,6 +67,12 @@ angular.module("app").controller("AdvancedDemoController", function($scope) {
 
     $scope.$watch('model', function(model) {
         $scope.modelAsJson = angular.toJson(model, true);
+
+    }, true);
+
+    $scope.$watch('ogrenciler', function(ogrenciler) {
+        $scope.modelAsJson2 = angular.toJson(ogrenciler, true);
+        
     }, true);
 
 });

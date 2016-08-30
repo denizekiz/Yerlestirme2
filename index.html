@@ -29,11 +29,17 @@
 
     <div ng-repeat="containers in model" class="col-md-2">
         <div  ng-include="'./takvim.html'" ></div>
-        <div class="dropzone box box-yellow" ng-include="'node_modules/angular-drag-and-drop-lists/demo/advanced/advanced.html'"></div>
+        <div class="dropzone box box-yellow" ng-include="'egitimler.html'"></div>
     </div>
+    <div class="col-md-12">
+    <div ng-include="'./ogrenci.html'"></div>
+    </div>
+
+
     <div class="col-md-12"> 
     <h2>Generated Model</h2>
 <pre>{{modelAsJson}}</pre>
+<pre>{{modelAsJson2}}</pre>
 </div>
 </div>
 
