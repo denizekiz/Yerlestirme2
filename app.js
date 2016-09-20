@@ -33,16 +33,25 @@ angular.module("app").controller("AdvancedDemoController", function($scope) {
     $scope.ogrenciler = [];
     var id = 100;
 
-    for (var i = 1;i<20;i++)
+    for (var i=1;i<5;i++)
     {
-        $scope.ogrenciler[i-1]=  {label:"Ogrenci "+id++,yoklama:"yerleştirilmedi"};
+      $scope.ogrenciler[i-1] = {label:"Ogrenci "+id++,dersler:[]};
     }
+
+    $scope.ogrenciler.forEach(function(ogrenci)
+      {
+               for (var i = 1;i<7;i++)
+          {
+              ogrenci.dersler[i-1]=  {ad:ogrenci.label ,label:"Ders "+i,yoklama:"yerleştirilmedi"};
+          }
+      });
+
 
 
     // Initialize model
     var id = 1;
     for (var i = 1; i < 7; ++i) {
-        $scope.model[i-1] = {name:"Saat "+i,ekipler:[] };
+        $scope.model[i-1] = {name:"Saat "+i,ekipler:[],egitmen:"ahmet" };
     }
 
     $scope.model.forEach(function(model)
@@ -56,7 +65,7 @@ angular.module("app").controller("AdvancedDemoController", function($scope) {
                         model.ekipler.forEach(function(ekip){
 
                             for(var i=1;i<5;i++){
-                            ekip.ogrenciler[i-1] = {label:"Ogrenci "+id++,yoklama:"bekleniyor"};
+                            ekip.ogrenciler[i-1] = {ad:"Ogrenci "+id++,yoklama:"bekleniyor"};
 
                         }
                         });

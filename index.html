@@ -18,6 +18,10 @@
      <link rel="stylesheet" type="text/css" href="node_modules/angular-drag-and-drop-lists/demo/advanced/advanced.css" />
      <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.1.js"></script>
      <script src="node_modules/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
+     <script>
+      var iosDragDropShim = { enableEnterLeave: true }
+</script>
+<script src="ios-drag-drop.js"></script>
 
         <script src="app.js"></script>
     </head>
@@ -29,10 +33,17 @@
 
     <div ng-repeat="containers in model" class="col-md-2">
         <div  ng-include="'./takvim.html'" ></div>
+        <button type="button" class="glyphicon glyphicon-plus"></button> Yeni Eğitim Aç
         <div class="dropzone box box-yellow" ng-include="'egitimler.html'"></div>
     </div>
     <div class="col-md-12">
-    <div ng-include="'./ogrenci.html'"></div>
+    <label> Ara: <input type="text" ng-model="searchText"></label>
+    </div>
+    <div class="col-md-12">
+    
+
+    <div ng-repeat="ogrenci in ogrenciler | filter:searchText" class="col-md-2" >
+      <div class="dropzone box box-yellow" ng-include="'./ogrenci.html'"></div>"
     </div>
 
 

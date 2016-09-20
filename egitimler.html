@@ -13,6 +13,12 @@
           <!--  <h2>Ekip {{$index+1}}</h2><br/> !-->
           <p>Başlangıç saati: {{ items.Bsaat}} - Bitiş saati: {{ items.Bsaat+items.esaat}}</p><br/>
             <p>Seviye {{ items.seviye}}</p><br/>
+            <label>Eğitmen <select ng-model="containers.egitmen">
+                 <option value="ahmet">ahmet</option>
+      <option value="mehmet">mehmet</option>
+      <option value="kerim">kerim</option>
+      <option value="ibo">ibo</option>
+            </select></label>
             <button type="button" class="btn btn-primary" ng-click="ayrintilar=!ayrintilar">Ayrıntılar</button>
             
             <button type="button" ng-show="ayrintilar" class="btn" ng-click="not=true">Eğitim notları</button><br/>
@@ -35,7 +41,7 @@
             <button ng-hide="items.durum=='tamamlandı'" ng-click="items.durum='ertelendi'" class="btn btn-xs btn-default">Ertele</button>
             <button ng-hide="items.durum=='tamamlandı'" ng-click="items.durum='iptal'" class="btn btn-xs btn-danger">İptal</button>
             <ul dnd-list="items.ogrenciler"
-                dnd-disable-if="items.ogrenciler.length>items.limit-1"
+                
                 dnd-allowed-types="['itemType']"
                 dnd-horizontal-list="true"
                 dnd-external-sources="true"
@@ -53,7 +59,7 @@
                     dnd-canceled="logEvent('Drag operation canceled', event)"
                     dnd-dragend="logEvent('Drag operation ended', event)" 
                     ng-class="{'little' : ayrintilar==false}">
-                    {{item.label}}
+                    {{item.ad}} {{item.label}} 
               <select ng-show="ayrintilar" name="singleSelect" ng-model="item.yoklama" class="form-control"> {{item.yoklama}}
       <option value="geldi">Geldi</option>
       <option value="gelmedi">Gelmedi</option>

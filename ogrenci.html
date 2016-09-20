@@ -1,6 +1,6 @@
-<h2>Öğrenciler</h2>
-<div class="container-element box box-blue">
- <ul dnd-list="ogrenciler"
+<p>{{ ogrenci.label }}</p>
+<div class="container-element box box-blue ogrenci">
+ <ul dnd-list="ogrenci.dersler" 
                 
                 dnd-allowed-types="['itemType']"
                 dnd-horizontal-list="true"
@@ -8,17 +8,18 @@
                 dnd-dragover="dragoverCallback(event, index, external, type)"
                 dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
                 dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
-                class="itemlist">
-                <li ng-repeat="item in ogrenciler"
+                class="itemlist ogrenci">
+                <li ng-repeat="item in ogrenci.dersler"
                     dnd-draggable="item"
                     dnd-type="'itemType'"
                     dnd-effect-allowed="move"
                     dnd-dragstart="logEvent('Started to drag an item', event)"
-                    dnd-moved="ogrenciler.splice($index, 1); logEvent('Item moved', event)"
+                    dnd-moved="ogrenci.dersler.splice($index, 1); logEvent('Item moved', event)"
                     dnd-copied="logEvent('Item copied', event)"
                     dnd-canceled="logEvent('Drag operation canceled', event)"
                     dnd-dragend="logEvent('Drag operation ended', event)" 
-                    ng-class="{'little' : ayrintilar==false}">
+                    ng-class="{'little' : ayrintilar==false}"
+                    >
                     {{item.label}}
               <select ng-show="ayrintilar" name="singleSelect" ng-model="item.yoklama" class="form-control"> {{item.yoklama}}
       <option value="geldi">Geldi</option>
